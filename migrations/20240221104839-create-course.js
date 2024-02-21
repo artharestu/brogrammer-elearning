@@ -10,13 +10,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       urlVideo: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       statusActive: {
         type: Sequelize.BOOLEAN
