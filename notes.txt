@@ -13,6 +13,6 @@ npx sequelize migration:create --name add-coloumn-phone-number-in-userprofile
 
 npx sequelize seed:create --name seed-categories
 npx sequelize seed:create --name seed-users
-npx sequelize seed:create --name seed-users
-npx sequelize seed:create --name seed-users
-npx sequelize seed:create --name seed-users
+npx sequelize seed:create --name seed-course
+npx sequelize seed:create --name seed-userprofile
+npx sequelize seed:create --name seed-subscription
