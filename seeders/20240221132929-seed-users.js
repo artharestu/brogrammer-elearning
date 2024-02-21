@@ -5,7 +5,10 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     const data = require('../db/categories.json').map(e => {
       return {
-        name: e.name,
+        username: e.username,
+        password: e.password,
+        email: e.email,
+        role: e.role,
         createdAt: new Date(),
         updatedAt: new Date()
       }
