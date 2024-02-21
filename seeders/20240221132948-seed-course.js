@@ -3,22 +3,20 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    const data = require('../db/categories.json').map(e => {
+    const data = require('../data/UserProfiles.json').map(e => {
       return {
-        name: e.name,
+        fullName: e.fullName,
+        profilePicture: e.profilePicture,
+        dateOfBirth: e.dateOfBirth,
+        UserId: e.UserId,
         createdAt: new Date(),
         updatedAt: new Date()
       }
     })
-    await queryInterface.bulkInsert('Users', data, {});
+    await queryInterface.bulkInsert('UserProfiles', data, {});
   },
 
   async down(queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    await queryInterface.bulkDelete('UserProfiles', null, {});
   }
 };

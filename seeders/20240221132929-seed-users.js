@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    const data = require('../db/categories.json').map(e => {
+    const data = require('../data/Users.json').map(e => {
       return {
         username: e.username,
         password: e.password,

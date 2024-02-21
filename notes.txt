@@ -16,3 +16,4 @@ npx sequelize seed:create --name seed-users
 npx sequelize seed:create --name seed-course
 npx sequelize seed:create --name seed-userprofile
 npx sequelize seed:create --name seed-subscription
+
