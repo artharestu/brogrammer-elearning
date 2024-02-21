@@ -1,7 +1,32 @@
 [
-  { "fullName": "sbronger0", "profilePicture": "kD2`WUq/h>P", "dateOfBirth": "2005-12-06", "UserId": 1 },
-  { "fullName": "troomes1", "profilePicture": "oP4%RIcv5'W", "dateOfBirth": "2007-05-02", "UserId": 3 },
-  { "fullName": "lkeitch2", "profilePicture": "kU9.7Vs6M,{8", "dateOfBirth": "2009-05-29", "UserId": 5 },
-  { "fullName": "tbestwerthick3", "profilePicture": "tT8=1R.a0JTK8", "dateOfBirth": "2009-09-29", "UserId": 4 },
-  { "fullName": "sbaselli4", "profilePicture": "nZ3/KayL&J4U)1+s", "dateOfBirth": "2010-01-24", "UserId": 2 }
+  {
+    "fullName": "sbronger0",
+    "profilePicture": "kD2`WUq/h>P",
+    "dateOfBirth": "2005-12-06",
+    "UserId": 1
+  },
+  {
+    "fullName": "troomes1",
+    "profilePicture": "oP4%RIcv5'W",
+    "dateOfBirth": "2007-05-02",
+    "UserId": 3
+  },
+  {
+    "fullName": "lkeitch2",
+    "profilePicture": "kU9.7Vs6M,{8",
+    "dateOfBirth": "2009-05-29",
+    "UserId": 5
+  },
+  {
+    "fullName": "tbestwerthick3",
+    "profilePicture": "tT8=1R.a0JTK8",
+    "dateOfBirth": "2009-09-29",
+    "UserId": 4
+  },
+  {
+    "fullName": "sbaselli4",
+    "profilePicture": "nZ3/KayL&J4U)1+s",
+    "dateOfBirth": "2010-01-24",
+    "UserId": 2
+  }
 ]
