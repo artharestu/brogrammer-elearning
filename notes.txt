@@ -1,0 +1,18 @@
+sequelize db:create 
+
+npx sequelize model:create --name Category --attributes name:string
+npx sequelize model:create --name User --attributes username:string,password:string,email:string,role:string
+npx sequelize model:create --name Course --attributes name:string,description:string,urlVideo:string,statusActive:boolean,price:integer,CategoryId:integer
+npx sequelize model:create --name UserProfile --attributes fullName:string,profilePicture:string,dateOfBirth:date,UserId:integer
+npx sequelize model:create --name Subscription --attributes UserId:integer,CourseId:integer
+
+npx sequelize db:migrate:status
+npx sequelize db:migrate
+
+npx sequelize migration:create --name add-coloumn-phone-number-in-userprofile
+
+npx sequelize seed:create --name seed-categories
+npx sequelize seed:create --name seed-users
+npx sequelize seed:create --name seed-users
+npx sequelize seed:create --name seed-users
+npx sequelize seed:create --name seed-users

@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "brogrammer-elearning",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
