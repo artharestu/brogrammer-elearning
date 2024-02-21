@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Async JS Crash Course - Callbacks, Promises, Async Await ",
+    "description": "In this crash course we will look at asynchronous JavaScript and cover callbacks, promises including promise.all as well as the async / await syntax",
+    "urlVideo": "https://www.youtube.com/watch?v=PoRJizFvM7s",
+    "statusActive": true,
+    "price": 200000,
+    "CategoryId": 2
+  },
+  {
+    "name": "HTML Tutorial For Beginners",
+    "description": "In this Simplilearn HTML tutorial for beginners video, we go through the basic concepts of HTML, and it's various tags. In the end, we also code a simple web page using HTML and CSS, so as to give you a practical perspective on developing a webpage",
+    "urlVideo": "https://www.youtube.com/watch?v=MDLn5-zSQQI",
+    "statusActive": true,
+    "price": 50000,
+    "CategoryId": 1
+  },
+  {
+    "name": "Full Stack Web Development for Beginners (Full Course on HTML, CSS, JavaScript, Node.js, MongoDB)",
+    "description": "Learn full-stack web development in this full course for beginners. First, you will learn the basics of HTML, CSS, and JavaScript. Then, you will learn how to put everything together to create a frontend movie search app. Finally, you will learn how to create a backend API to create movie reviews and connect the frontend to the backend. The backend uses Node.js, Express, and MongoDB.",
+    "urlVideo": "https://www.youtube.com/watch?v=nu_pCVPKzTk",
+    "statusActive": true,
+    "price": 30000000,
+    "CategoryId": 4
+  },
+  {
+    "name": "world's shortest UI/UX design course",
+    "description": "This video is what I wish I had when I first learned about UI/UX design. It covers that 20% of UI design that you'll be dealing with 80% of the time. Hopefully it'll help you start your journey or at least know what you're stepping into. Happy creating!",
+    "urlVideo": "https://www.youtube.com/watch?v=wIuVvCuiJhU",
+    "statusActive": false,
+    "price": 600000,
+    "CategoryId": 3
+  },
+  {
+    "name": "How the Backend works? Server, Application, Database, and API ",
+    "description": "This time, I will show you how the backend works, which consists of three different parts; server, application, and database. Let's learn what each of them are and how they work at the back side of the web.",
+    "urlVideo": "https://www.youtube.com/watch?v=gOghS3BmaxI",
+    "statusActive": false,
+    "price": 1000000,
+    "CategoryId": 5
+  }
+]
