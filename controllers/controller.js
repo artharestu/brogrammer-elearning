@@ -97,6 +97,7 @@ class Controller {
 
   static async myCourses(req, res) {
     const { username } = req.session;
+    const { message } = req.query;
     try {
       const { id } = await User.findOne({ where: { username } });
       const dataCourse = await Course.findAll({
@@ -109,7 +110,7 @@ class Controller {
           }
         }],
       });
-      res.render("myCourses", { dataCourse, username, stringSlice });
+      res.render("myCourses", { dataCourse, username, stringSlice, message });
     } catch (error) {
       console.log(error);
       res.send(error);
@@ -126,6 +127,36 @@ class Controller {
         }
       })
       res.render('viewCourse', { data, username });
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async unsubscribe(req, res) {
+    const { CourseId } = req.params;
+    const { username } = req.session;
+    try {
+      const user = await User.findOne({ where: { username } });
+
+      await Subscription.destroy({
+        where: {
+          [Op.and]: [
+            { UserId: user.id },
+            { CourseId: CourseId }
+          ]
+        }
+      })
+
+      const dataCourse = await Course.findOne({
+        where: {
+          id: CourseId
+        }
+      })
+
+      const message = `You have successfully unsubscribed from <b>${dataCourse.name}</b>`
+
+      res.redirect("/mycourses?message=" + message);
     } catch (error) {
       console.log(error);
       res.send(error);
