@@ -1,17 +1,27 @@
 const { User, Course, Category, Subscription, UserProfile } = require("../models");
 const bcrypt = require("bcrypt");
+const { Op } = require("sequelize");
 
 class Controller {
   static async home(req, res) {
     const { username } = req.session;
     try {
-      let dataCourse = await Course.findAll({ include: Category });
+      const { id } = await User.findOne({ where: { username } });
+      const dataCourse = await Course.findAll({
+        include: [Category, {
+          model: Subscription,
+          where: {
+            UserId: {
+              [Op.eq]: id
+            }
+          }
+        }],
+      });
       res.render("home", { dataCourse, username });
     } catch (error) {
       console.log(error);
       res.send(error);
     }
-
   }
 
   static loginPage(req, res) {
@@ -64,6 +74,19 @@ class Controller {
     try {
       await User.create({ username, password, email });
       res.redirect("/login");
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async subscribe(req, res) {
+    const { CourseId } = req.params;
+    try {
+      const user = await User.findOne({ where: { username: req.session.username } });
+      await Subscription.create({ UserId: user.id, CourseId });
+
+      res.redirect("/");
     } catch (error) {
       console.log(error);
       res.send(error);
