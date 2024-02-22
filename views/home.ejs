@@ -10,27 +10,33 @@
 
 <body class="bg-light">
   <%- include('_nav') %>
-    <div class="container my-5 d-flex flex-wrap justify-content-center gap-3 ">
-      <% dataCourse.forEach(element=> { %>
-        <div class="card" style="width: 18rem;">
-          <img src="http://img.youtube.com/vi/<%= element.urlVideo %>/default.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">
-              <%= element.name %>
-            </h5>
-            <p class="card-text">
-              <%= element.description %>
-            </p>
-            <p class="card-text">
-              <%= element.price %>
-            </p>
-            <p class="card-text">
-              <%= element.Category.name %>
-            </p>
-            <a href="#" class="btn btn-primary w-100">Subscribe</a>
+    <div class="container my-5">
+      <form class="d-flex justify-content-center my-3 p-3">
+        <input type="text" class="form-control me-1" id="search" placeholder="Search by Title" name="search">
+        <button class="btn btn-warning">Search</button>
+      </form>
+      <div class="d-flex flex-wrap justify-content-center gap-3 shadow-lg w-100 bg-light py-2">
+        <% dataCourse.forEach(element=> { %>
+          <div class="card" style="width: 18rem;">
+            <img src="http://img.youtube.com/vi/<%= element.urlVideo %>/hqdefault.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= stringSlice(element.name, 50) %>
+              </h5>
+              <p class="card-text">
+                <%= stringSlice(element.description, 100) %>
+              </p>
+              <p class="card-text">
+                Price: <%= element.toRupiah %>
+              </p>
+              <p class="card-text">
+                Category: <%= element.Category.name %>
+              </p>
+              <a href="/subscribe/<%= element.id %>" class="btn btn-primary w-100">Subscribe</a>
+            </div>
           </div>
-        </div>
-        <% }) %>
+          <% }) %>
+      </div>
     </div>
 </body>
 

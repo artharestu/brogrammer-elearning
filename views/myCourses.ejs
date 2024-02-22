@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('_bootstrap') %>
+    <title>My Courses</title>
+</head>
+
+<body class="bg-light">
+  <%- include('_nav') %>
+    <div class="container my-5 d-flex flex-wrap justify-content-center gap-3 ">
+      <% dataCourse.forEach(element=> { %>
+        <div class="card" style="width: 18rem;">
+          <img src="http://img.youtube.com/vi/<%= element.urlVideo %>/hqdefault.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= stringSlice(element.name, 50) %>
+            </h5>
+            <p class="card-text">
+              <%= stringSlice(element.description, 100) %>
+            </p>
+            <p class="card-text">
+              Price: <%= element.toRupiah %>
+            </p>
+            <p class="card-text">
+              Category: <%= element.Category.name %>
+            </p>
+            <a href="/mycourses/<%= element.id %>" class="btn btn-primary w-100">View Course</a>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+</body>
+
+</html>
