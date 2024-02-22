@@ -15,6 +15,8 @@ router.get("/mycourses/:CourseId", Middleware.auth, Controller.viewCourse);
 router.get("/mycourses/:CourseId/unsubscribe", Middleware.auth, Controller.unsubscribe);
 
 router.get("/admin", Middleware.admin, Controller.admin);
+router.get("/admin/:CourseId/edit", Middleware.admin, Controller.editVideo);
+router.post("/admin/:CourseId/edit", Middleware.admin, Controller.saveVideo);
 
 router.get("/userProfile", Middleware.auth, Controller.inputUserProf);
 router.post("/userProfile", Middleware.auth, Controller.userProf);

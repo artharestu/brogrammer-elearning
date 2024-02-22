@@ -15,19 +15,31 @@
         <form method="post" class="p-5">
           <h3>Edit Video</h3>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingname" placeholder="name" name="name">
+            <input type="text" class="form-control" id="floatingname" name="name" value="<%= data.name %>">
             <label for="floatingname">Title</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingurlVideo" placeholder="URL Video" name="urlVideo">
+            <input type="text" class="form-control" id="floatingurlVideo" name="urlVideo" value="<%= data.urlVideo %>">
             <label for="floatingurlVideo">Video ID</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingPassword" placeholder="Email" name="email">
-            <label for="floatingPassword">Email</label>
+            <input type="number" class="form-control" id="floatingurlVideo" name="price" value="<%= data.price %>">
+            <label for="floatingurlVideo">Price</label>
           </div>
-          <button class="btn btn-outline-primary w-100" type="submit">Register</button>
-          <p class="text-center">Have an account? <a href="/login">Login</a></p>
+          <select class="form-select mb-3" name="CategoryId">
+            <% category.forEach(element=> { %>
+              <option value="<%= element.id %>">
+                <%= element.name %>
+              </option>
+              <% }) %>
+          </select>
+          <div class="form-floating mb-3">
+            <textarea class="form-control" id="floatingDescription" name="description" style="height: 200px;">
+              <%= data.description %>
+            </textarea>
+            <label for="floatingPassword">Description</label>
+          </div>
+          <button class="btn btn-outline-primary w-100" type="submit">Edit</button>
         </form>
       </div>
     </div>
