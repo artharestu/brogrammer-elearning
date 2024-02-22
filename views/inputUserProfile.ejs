@@ -5,17 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%- include('_bootstrap') %>
-    <title>Document</title>
+    <title>Edit Profile</title>
 </head>
-
-
 
 <body class="bg-light">
   <%- include('_nav') %>
     <div class="container d-flex">
       <div class="shadow-lg my-5" style="width: 800vw;">
-        <h3>Edit Profile</h3>
         <form method="post" class="p-5">
+          <h3>Edit Profile</h3>
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatingFullName" placeholder="Fullname" name="fullName">
             <!-- SUPAYA DATA YANG DI INPUT BISA MASUK KE REQ.BODY
