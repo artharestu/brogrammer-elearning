@@ -4,11 +4,13 @@ const bcrypt = require('bcrypt');
 class Controller {
 
   static home(req, res) {
-    res.render('home')
+    const { username } = req.session;
+    res.render('home', { username })
   }
 
   static loginPage(req, res) {
-    res.render('login')
+    const { username } = req.session;
+    res.render('login', { username })
   }
 
   static async login(req, res) {
@@ -32,7 +34,7 @@ class Controller {
         }
       }
 
-      req.session.userId = user.id;
+      req.session.username = user.username;
 
       res.redirect('/')
     } catch (error) {
