@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('_bootstrap') %>
+    <title>Login Page</title>
+</head>
+
+<body class="bg-light">
+  <%- include('_nav') %>
+    <div class="container d-flex">
+      <div class="shadow-lg my-5 mx-auto" style="width: 50vw;">
+        <form method="post" class="p-5">
+          <h3>Login</h3>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingUsername" placeholder="Username" name="username">
+            <label for="floatingUsername">Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <button class="btn btn-outline-primary w-100" type="submit">Login</button>
+          <p>Don't have an account? <a href="/register">Register</a></p>
+        </form>
+      </div>
+    </div>
+</body>
+
+</html>
