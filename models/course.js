@@ -1,5 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
+const { stringSlice } = require("../helper/formatter");
+
 module.exports = (sequelize, DataTypes) => {
   class Course extends Model {
     static associate(models) {
@@ -21,9 +23,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Course.init(
     {
-      name: DataTypes.TEXT,
+      name: DataTypes.STRING,
       description: DataTypes.TEXT,
-      urlVideo: DataTypes.TEXT,
+      urlVideo: DataTypes.STRING,
       statusActive: DataTypes.BOOLEAN,
       price: DataTypes.INTEGER,
       CategoryId: DataTypes.INTEGER,
@@ -31,6 +33,11 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Course",
+      hooks: {
+        beforeCreate: (course) => {
+          course.name = stringSlice(course.name, 200)
+        }
+      }
     }
   );
   return Course;
