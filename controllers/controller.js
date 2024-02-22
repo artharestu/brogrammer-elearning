@@ -2,7 +2,7 @@ const { User, Course, Category, Subscription, UserProfile } = require("../models
 const bcrypt = require("bcrypt");
 const { Op } = require("sequelize");
 const { stringSlice } = require("../helper/formatter");
-
+const qrcode = require('qrcode');
 class Controller {
   static async home(req, res) {
     const { username } = req.session;
@@ -126,7 +126,15 @@ class Controller {
           id: CourseId
         }
       })
-      res.render('viewCourse', { data, username });
+
+      const urlVideo = `https://www.youtube.com/embed/${data.urlVideo}`;
+
+      qrcode.toDataURL(urlVideo, (err, url) => {
+        if (err) throw err;
+        res.render('viewCourse', { data, username, qrCodeURL: url });
+      });
+
+
     } catch (error) {
       console.log(error);
       res.send(error);
