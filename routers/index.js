@@ -11,5 +11,6 @@ router.get("/register", Middleware.login, Controller.registerPage);
 router.post("/register", Controller.register);
 router.get("/subscribe/:CourseId", Middleware.auth, Controller.subscribe);
 router.get("/mycourses", Middleware.auth, Controller.myCourses);
+router.get("/mycourses/:CourseId", Middleware.auth, Controller.viewCourse);
 
 module.exports = router;

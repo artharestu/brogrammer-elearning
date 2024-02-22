@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('_bootstrap') %>
+    <title>View Video Course</title>
+</head>
+
+<body>
+  <%- include('_nav') %>
+    <div class="container d-flex justify-content-center my-5">
+      <div class="card" style="width: 50vw;">
+        <iframe height="400" width="100%" src="https://www.youtube.com/embed/<%= data.urlVideo %>">
+        </iframe>
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= data.name %>
+          </h5>
+          <p class="card-text">
+            <%= data.description %>
+          </p>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

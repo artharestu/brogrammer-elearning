@@ -10,6 +10,14 @@ module.exports = (sequelize, DataTypes) => {
       });
       Course.belongsTo(models.Category);
     }
+
+    get toRupiah() {
+      return this.price.toLocaleString('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+      })
+    }
+
   }
   Course.init(
     {

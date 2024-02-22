@@ -1,17 +1,22 @@
 const { User, Course, Category, Subscription, UserProfile } = require("../models");
 const bcrypt = require("bcrypt");
 const { Op } = require("sequelize");
+const { stringSlice } = require("../helper/formatter");
 
 class Controller {
   static async home(req, res) {
     const { username } = req.session;
+    const { search } = req.query;
     try {
-      const dataCourse = await Course.findAll({ include: Category })
+      const options = { include: [Category, Subscription] }
 
-      res.render("home", { dataCourse, username });
+      if (search) options.where = { name: { [Op.iLike]: `%${search}%` } }
+
+      const dataCourse = await Course.findAll(options);
+      res.render("home", { dataCourse, username, stringSlice });
     } catch (error) {
       console.log(error);
-      res.send(error);
+      res.send(error)
     }
   }
 
@@ -57,7 +62,8 @@ class Controller {
 
   static registerPage(req, res) {
     const { username } = req.session;
-    res.render("register", { username });
+    const { error } = req.query;
+    res.render("register", { username, error });
   }
 
   static async register(req, res) {
@@ -67,7 +73,12 @@ class Controller {
       res.redirect("/login");
     } catch (error) {
       console.log(error);
-      res.send(error);
+      if (error.name === "SequelizeValidationError") {
+        const errorMessages = error.errors.map((err) => err.message);
+        res.redirect(`/register?error=${errorMessages}`);
+      } else {
+        res.send(error);
+      }
     }
   }
 
@@ -77,7 +88,7 @@ class Controller {
       const user = await User.findOne({ where: { username: req.session.username } });
       await Subscription.create({ UserId: user.id, CourseId });
 
-      res.redirect("/");
+      res.redirect("/mycourses");
     } catch (error) {
       console.log(error);
       res.send(error);
@@ -98,7 +109,23 @@ class Controller {
           }
         }],
       });
-      res.render("myCourses", { dataCourse, username });
+      res.render("myCourses", { dataCourse, username, stringSlice });
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async viewCourse(req, res) {
+    const { username } = req.session;
+    const { CourseId } = req.params;
+    try {
+      const data = await Course.findOne({
+        where: {
+          id: CourseId
+        }
+      })
+      res.render('viewCourse', { data, username });
     } catch (error) {
       console.log(error);
       res.send(error);

@@ -16,18 +16,18 @@
           <img src="http://img.youtube.com/vi/<%= element.urlVideo %>/hqdefault.jpg" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">
-              <%= element.name %>
+              <%= stringSlice(element.name, 50) %>
             </h5>
             <p class="card-text">
-              <%= element.description %>
+              <%= stringSlice(element.description, 100) %>
             </p>
             <p class="card-text">
-              <%= element.price %>
+              Price: <%= element.toRupiah %>
             </p>
             <p class="card-text">
-              <%= element.Category.name %>
+              Category: <%= element.Category.name %>
             </p>
-            <a href="#" class="btn btn-primary w-100">Subscribe</a>
+            <a href="/mycourses/<%= element.id %>" class="btn btn-primary w-100">View Course</a>
           </div>
         </div>
         <% }) %>
