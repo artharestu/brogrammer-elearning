@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         through: models.Subscription,
         foreignKey: "CourseId",
       });
+      User.hasOne(models.UserProfile)
     }
   }
 
