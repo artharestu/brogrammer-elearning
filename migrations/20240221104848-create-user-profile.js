@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       profilePicture: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       dateOfBirth: {
         type: Sequelize.DATE
