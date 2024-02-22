@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "postgres",
-    "password": "Robherto82",
+    "password": "postgres",
     "database": "brogrammer-elearning",
     "host": "localhost",
     "dialect": "postgres"

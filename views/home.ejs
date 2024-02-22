@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%- include('_bootstrap') %>
-  <title>Document</title>
+    <title>Home</title>
 </head>
 
 <body class="bg-light">
   <%- include('_nav') %>
-    <div class="container">
-      <% dataCourses.forEach(element=> { %>
+    <div class="container my-5 d-flex flex-wrap justify-content-center gap-3 ">
+      <% dataCourse.forEach(element=> { %>
         <div class="card" style="width: 18rem;">
-          <img src="/gambar/<%= element.thumbnail %>" class="card-img-top" alt="...">
+          <img src="http://img.youtube.com/vi/<%= element.urlVideo %>/default.jpg" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">
               <%= element.name %>
@@ -24,7 +24,7 @@
             <p class="card-text">
               <%= element.price %>
             </p>
-            <a href="#" class="btn btn-primary">Subscribe</a>
+            <a href="#" class="btn btn-primary w-100">Subscribe</a>
           </div>
         </div>
         <% }) %>
