@@ -24,9 +24,9 @@
     "role": "Admin"
   },
   {
-    "username": "sbaselli4",
-    "password": "nZ3/KayL&J4U)1+s",
-    "email": "atrime4@issuu.com",
-    "role": "Member"
+    "username": "admin",
+    "password": "$2b$10$PZVnnBxeoRlHuCrFJNGmYOoug/CjGaylEILaPSRCi4Y3ewSWAmZP.",
+    "email": "admin@gmail.com",
+    "role": "Admin"
   }
 ]

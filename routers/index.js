@@ -14,5 +14,6 @@ router.get("/mycourses", Middleware.auth, Controller.myCourses);
 router.get("/mycourses/:CourseId", Middleware.auth, Controller.viewCourse);
 router.get("/mycourses/:CourseId/unsubscribe", Middleware.auth, Controller.unsubscribe);
 
+router.get("/admin", Middleware.admin, Controller.admin);
 
 module.exports = router;
