@@ -4,14 +4,13 @@ const bcrypt = require("bcrypt");
 class Controller {
   static async home(req, res) {
     const { username } = req.session;
-    let dataCourse = await Course.findAll();    
+    let dataCourse = await Course.findAll();
     res.render("home", { dataCourse, username });
   }
 
   static loginPage(req, res) {
     const { username } = req.session;
     res.render('login', { username })
-
   }
 
   static async login(req, res) {
@@ -50,7 +49,8 @@ class Controller {
   }
 
   static registerPage(req, res) {
-    res.render("register");
+    const { username } = req.session;
+    res.render("register", { username });
   }
 
   static async register(req, res) {
