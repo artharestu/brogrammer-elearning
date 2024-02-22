@@ -10,13 +10,25 @@
       <li class="nav-item">
         <a class="nav-link text-light" href="/register">register</a>
       </li>
+
+
+
+      <!-- ini untuk logic menampilkan fitur logout jika user sudah login -->
       <% if (username) { %>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="/logout">
-            <%= username %> (logout)
-          </a>
-        </li>
-        <% } %>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="/logout">
+          <%= username %> (logout)
+        </a>
+      </li>
+      <li class="position-absolute top-50 end-0 translate-middle-y p-4 g-col-6">
+        <a class="nav-link text-light" href="/userProfile"><%= username %> Profile</a>
+      </li>
+      <% } %>
+      <!-- ini untuk logic menampilkan fitur logout jika user sudah login -->
+
+
+
+
     </ul>
   </div>
 </nav>
