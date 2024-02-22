@@ -16,4 +16,7 @@ router.get("/mycourses/:CourseId/unsubscribe", Middleware.auth, Controller.unsub
 
 router.get("/admin", Middleware.admin, Controller.admin);
 
+router.get("/userProfile", Middleware.auth, Controller.inputUserProf);
+router.post("/userProfile", Middleware.auth, Controller.userProf);
+
 module.exports = router;

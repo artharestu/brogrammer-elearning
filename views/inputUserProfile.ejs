@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('_bootstrap') %>
+    <title>Document</title>
+</head>
+
+
+
+<body class="bg-light">
+  <%- include('_nav') %>
+    <div class="container d-flex">
+      <div class="shadow-lg my-5" style="width: 800vw;">
+        <h3>Edit Profile</h3>
+        <form method="post" class="p-5">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingFullName" placeholder="Fullname" name="fullName">
+            <!-- SUPAYA DATA YANG DI INPUT BISA MASUK KE REQ.BODY
+                        name nya harus sesuai dengan nama data/variabel yang ada di MODEL -->
+            <label for="floatingFullName">Full Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingProfilePicture" placeholder="Profilepicture"
+              name="profilePicture">
+            <label for="floatingProfilePicture">Link Profile Picture</label>
+          </div>
+          <div class="form-floating mb-3">
+
+            <!-- untuk bisa memudahkan user milih tanggal
+                    ganti aja type nya jadi date (boostrap) -->
+            <input type="date" class="form-control" id="floatingBirthDate" placeholder="BirthdayDate"
+              name="dateOfBirth">
+            <label for="floatingBirthDate">Birth Date</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+</body>
+
+</html>

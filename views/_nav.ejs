@@ -16,12 +16,17 @@
             <li class="nav-item">
               <a class="nav-link text-light" href="/register">Register</a>
             </li>
+
             <% } else { %>
-              <li class="nav-item">
+              <li class="position-absolute top-50 end-0 translate-middle-y pe-0 g-col-6 d-flex">
+                <a class="nav-link text-light" href="/userProfile">
+                  Welcome, <%= username %>!
+                </a>
                 <a class="nav-link text-light" href="/logout">
-                  <%= username %> (Logout)
+                  (Logout)
                 </a>
               </li>
+
               <% } %>
     </ul>
   </div>
