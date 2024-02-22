@@ -1,5 +1,21 @@
 [
   {
+    "name": "Belajar HTML5",
+    "description": "Belajar HTML5 adalah sebuah pelajaran belajar HTML5 yang disusun oleh Sandhika Galih. Belajar HTML5 adalah sebuah pelajaran belajar HTML5 yang disusun oleh Sandhika Galih.",
+    "urlVideo": "Q2VqCG13ejA",
+    "statusActive": true,
+    "price": 300000,
+    "CategoryId": 2
+  },
+  {
+    "name": "Apa itu Tailwind CSS? | Belajar Tailwind CSS",
+    "description": "Belajar CSS framework ini akan mengajarkan bagaimana membuat desain website dengan CSS. Dengan Tailwind CSS, Anda akan dapat membuat desain website yang menarik dan interaktif tanpa harus mengubah HTML.",
+    "urlVideo": "z3slaXqmkT0",
+    "statusActive": true,
+    "price": 300000,
+    "CategoryId": 2
+  },
+  {
     "name": "Async JS Crash Course - Callbacks, Promises, Async Await ",
     "description": "In this crash course we will look at asynchronous JavaScript and cover callbacks, promises including promise.all as well as the async / await syntax",
     "urlVideo": "PoRJizFvM7s",

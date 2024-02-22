@@ -213,6 +213,40 @@ class Controller {
       res.send(error);
     }
   }
+
+  static async editVideo(req, res) {
+    const { username } = req.session;
+    const { CourseId } = req.params;
+    try {
+      const data = await Course.findOne({
+        where: {
+          id: CourseId
+        }
+      })
+      const category = await Category.findAll();
+
+      res.render("editVideo", { username, data, category });
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async saveVideo(req, res) {
+    const { CourseId } = req.params;
+    const { name, urlVideo, price, description, CategoryId } = req.body;
+    try {
+      await Course.update({ name, urlVideo, price, description, CategoryId }, {
+        where: {
+          id: CourseId
+        }
+      })
+      res.redirect("/admin");
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
 }
 
 module.exports = Controller;
