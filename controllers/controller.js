@@ -163,7 +163,7 @@ class Controller {
         }
       })
 
-      const message = `You have successfully unsubscribed from <b>${dataCourse.name}</b>`
+      const message = `You have successfully unsubscribed from ${dataCourse.name}`
 
       res.redirect("/mycourses?message=" + message);
     } catch (error) {
@@ -185,6 +185,32 @@ class Controller {
     } catch (error) {
       console.log(error);
       res.send(error)
+    }
+  }
+
+  static inputUserProf(req, res) {
+    const { username } = req.session;
+    /** SESSION adalah sebuah built in function nya express
+     * jadi bisa membuat data yang di input dari user bisa tersimpan\ */
+    res.render("inputUserProfile", { username });
+  }
+
+  static async userProf(req, res) {
+    const { username } = req.session;
+    const { fullName, profilePicture, dateOfBirth } = req.body;
+    try {
+      console.log(username);
+      let user = await User.findOne({
+        where: { username },
+      });
+
+      let UserId = user.id;
+      let dataProfile = await UserProfile.create({ fullName, profilePicture, dateOfBirth, UserId });
+      /** render gapake (/) untuk sebelah kiri <nama file ejs> */
+      res.render("showProfile", { dataProfile, username });
+    } catch (error) {
+      console.log(error);
+      res.send(error);
     }
   }
 }
