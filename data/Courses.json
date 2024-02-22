@@ -1,14 +1,118 @@
 [
   {
-    "name": "Belajar HTML5",
+    "name": "Belajar HTML 5",
     "description": "Belajar HTML5 adalah sebuah pelajaran belajar HTML5 yang disusun oleh Sandhika Galih. Belajar HTML5 adalah sebuah pelajaran belajar HTML5 yang disusun oleh Sandhika Galih.",
     "urlVideo": "Q2VqCG13ejA",
     "statusActive": true,
     "price": 300000,
+    "CategoryId": 1
+  },
+  {
+    "name": "Tutorial HTML Dasar (Bahasa Indonesia)",
+    "description": "Hi guys, di video kali ini, kita akan bahas tentang materi HTML Dasar. Ini adalah materi awal untuk teman-teman yang mau belajar menjadi Web Developer",
+    "urlVideo": "hMDJyb7VkYw",
+    "statusActive": true,
+    "price": 350000,
+    "CategoryId": 1
+  },
+  {
+    "name": "Belajar Web Dasar [HTML]",
+    "description": "Kita belajar web dasar di kelas terbuka, from zero to hero, sikat habis brader and sister",
+    "urlVideo": "wriGST3vp5M",
+    "statusActive": true,
+    "price": 200000,
+    "CategoryId": 1
+  },
+  {
+    "name": "HTML Dasar Pendahuluan HTML",
+    "description": "Pendahuluan mengenai HTML. Channel Web Programming Unpas. Oleh Sandhika Galih",
+    "urlVideo": "NBZ9Ro6UKV8",
+    "statusActive": true,
+    "price": 200000,
+    "CategoryId": 1
+  },
+  {
+    "name": "CSS Dasar",
+    "description": "Di video pertama ini kita akan belajar mengenai pendahuluan CSS, apa itu CSS, definisinya dan manfaatnya apa. ",
+    "urlVideo": "CleFk3BZB3g",
+    "statusActive": true,
+    "price": 200000,
     "CategoryId": 2
   },
   {
-    "name": "Apa itu Tailwind CSS? | Belajar Tailwind CSS",
+    "name": "CSS Tutorial Full Course for Beginners",
+    "description": "In this in-depth course, you will learn about all the key features of CSS. This is the most comprehensive CSS course we've published to date.",
+    "urlVideo": "OXGznpKZ_sA",
+    "statusActive": true,
+    "price": 200000,
+    "CategoryId": 2
+  },
+  {
+    "name": "Tutorial CSS Dasar (Bahasa Indonesia)",
+    "description": "CSS dasar, bersama Eko Kurniawan di channel Programmer Zaman Now",
+    "urlVideo": "8FhmFuGLhaQ",
+    "statusActive": true,
+    "price": 200000,
+    "CategoryId": 2
+  },
+  {
+    "name": "HTML & CSS Full Course - Beginner to Pro",
+    "description": "Enroll to get a Certificate of Completion and an elevated learning experience (breakdown into smaller videos covering specific topics, ad-free content, and progress tracking)",
+    "urlVideo": "G3e-cpL7ofc",
+    "statusActive": true,
+    "price": 200000,
+    "CategoryId": 2
+  },
+  {
+    "name": "HTML CSS Belajar Membuat WEBSITE Dari 0",
+    "description": "Tutorial panduan dasar belajar coding membuat website dari 0 sampai jadi dan di publish ke sebuah hostingan GRATIS sehingga website yang dibuat bisa di share ke siapapun. Relevan untuk tahun 2022 dan 2023.",
+    "urlVideo": "71a2zeC71gk",
+    "statusActive": true,
+    "price": 200000,
+    "CategoryId": 2
+  },
+  {
+    "name": "HTML CSS Javascript (Implementasi Logika Sederhana)",
+    "description": "Bikin website sederhana kali ini khusus untuk pemula yang belum pernah ngoding ataupun diluar bidang programming. ",
+    "urlVideo": "Mb6Np6QURDY",
+    "statusActive": true,
+    "price": 200000,
+    "CategoryId": 1
+  },
+  {
+    "name": "Belajar Dasar Pemrograman Javascript 1 Jam",
+    "description": "Belajar javascript dasar bahasa pemrograman untuk pemula di tahun 2023 dari 0. Mengenal fundamental program menggunakan JS (javascript)",
+    "urlVideo": "mD6uSGSjgr4",
+    "statusActive": true,
+    "price": 200000,
+    "CategoryId": 3
+  },
+  {
+    "name": "TUTORIAL JAVASCRIPT DASAR BAHASA INDONESIA",
+    "description": "Pada course kali ini, kita akan bahas tuntas dan lengkap selama 8 jam tentang JavaScript Dasar. ",
+    "urlVideo": "SDROba_M42g",
+    "statusActive": true,
+    "price": 200000,
+    "CategoryId": 3
+  },
+  {
+    "name": "JavaScript Full Course - Beginner to Pro",
+    "description": "In part 1 of this JavaScript tutorial and JavaScript full course, we learn how to build websites with JavaScript and use it with HTML and CSS.",
+    "urlVideo": "SBmSRK3feww",
+    "statusActive": true,
+    "price": 400000,
+    "CategoryId": 3
+  },
+  {
+    "name": "Dasar Pemrograman dengan Javascript",
+    "description": "Di seri ini kita akan mempelajari mengenai konsep dasar pemrograman, istilah2 yang ada dalam dunia pemrograman, cara menulis dan mengeksekusi program, dll.",
+    "urlVideo": "RUTV_5m4VeI",
+    "statusActive": true,
+    "price": 300000,
+    "CategoryId": 3
+  },
+  {
+    "name": "Belajar Tailwind CSS",
     "description": "Belajar CSS framework ini akan mengajarkan bagaimana membuat desain website dengan CSS. Dengan Tailwind CSS, Anda akan dapat membuat desain website yang menarik dan interaktif tanpa harus mengubah HTML.",
     "urlVideo": "z3slaXqmkT0",
     "statusActive": true,
@@ -28,7 +132,7 @@
     "description": "In this Simplilearn HTML tutorial for beginners video, we go through the basic concepts of HTML, and it's various tags. In the end, we also code a simple web page using HTML and CSS, so as to give you a practical perspective on developing a webpage",
     "urlVideo": "MDLn5-zSQQI",
     "statusActive": true,
-    "price": 50000,
+    "price": 500000,
     "CategoryId": 1
   },
   {
@@ -36,7 +140,7 @@
     "description": "Learn full-stack web development in this full course for beginners. First, you will learn the basics of HTML, CSS, and JavaScript. Then, you will learn how to put everything together to create a frontend movie search app. Finally, you will learn how to create a backend API to create movie reviews and connect the frontend to the backend. The backend uses Node.js, Express, and MongoDB.",
     "urlVideo": "nu_pCVPKzTk",
     "statusActive": true,
-    "price": 30000000,
+    "price": 300000,
     "CategoryId": 4
   },
   {

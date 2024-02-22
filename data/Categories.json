@@ -3,15 +3,18 @@
     "name": "HTML"
   },
   {
+    "name": "CSS"
+  },
+  {
     "name": "Javascript"
   },
   {
     "name": "UI/UX"
   },
   {
-    "name": "Full Stack Developer"
+    "name": "Front End Web Dev"
   },
   {
-    "name": "Back End Developer"
+    "name": "Back End Web Dev"
   }
 ]
