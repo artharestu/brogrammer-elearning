@@ -6,17 +6,8 @@ class Controller {
   static async home(req, res) {
     const { username } = req.session;
     try {
-      const { id } = await User.findOne({ where: { username } });
-      const dataCourse = await Course.findAll({
-        include: [Category, {
-          model: Subscription,
-          where: {
-            UserId: {
-              [Op.eq]: id
-            }
-          }
-        }],
-      });
+      const dataCourse = await Course.findAll({ include: Category })
+
       res.render("home", { dataCourse, username });
     } catch (error) {
       console.log(error);
@@ -87,6 +78,27 @@ class Controller {
       await Subscription.create({ UserId: user.id, CourseId });
 
       res.redirect("/");
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async myCourses(req, res) {
+    const { username } = req.session;
+    try {
+      const { id } = await User.findOne({ where: { username } });
+      const dataCourse = await Course.findAll({
+        include: [Category, {
+          model: Subscription,
+          where: {
+            UserId: {
+              [Op.eq]: id
+            }
+          }
+        }],
+      });
+      res.render("myCourses", { dataCourse, username });
     } catch (error) {
       console.log(error);
       res.send(error);
