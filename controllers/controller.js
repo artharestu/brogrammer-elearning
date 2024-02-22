@@ -13,7 +13,8 @@ class Controller {
       if (search) options.where = { name: { [Op.iLike]: `%${search}%` } }
 
       const dataCourse = await Course.findAll(options);
-      res.render("home", { dataCourse, username, stringSlice });
+      const user = await User.findOne({ where: { username } })
+      res.render("home", { dataCourse, username, stringSlice, user });
     } catch (error) {
       console.log(error);
       res.send(error)
@@ -168,6 +169,22 @@ class Controller {
     } catch (error) {
       console.log(error);
       res.send(error);
+    }
+  }
+
+  static async admin(req, res) {
+    const { username } = req.session;
+    const { search } = req.query;
+    try {
+      const options = { include: [Category, Subscription] }
+
+      if (search) options.where = { name: { [Op.iLike]: `%${search}%` } }
+
+      const dataCourse = await Course.findAll(options);
+      res.render("dashboardAdmin", { dataCourse, username, stringSlice });
+    } catch (error) {
+      console.log(error);
+      res.send(error)
     }
   }
 }
