@@ -10,7 +10,25 @@
 
 <body class="bg-light">
   <%- include('_nav') %>
-  <div class="container"></div>
+    <div class="container">
+      <% dataCourses.forEach(element=> { %>
+        <div class="card" style="width: 18rem;">
+          <img src="/gambar/<%= element.thumbnail %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= element.name %>
+            </h5>
+            <p class="card-text">
+              <%= element.description %>
+            </p>
+            <p class="card-text">
+              <%= element.price %>
+            </p>
+            <a href="#" class="btn btn-primary">Subscribe</a>
+          </div>
+        </div>
+        <% }) %>
+    </div>
 </body>
 
 </html>
