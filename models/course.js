@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         through: models.Subscription,
         foreignKey: "UserId",
       });
+      Course.belongsTo(models.Category);
     }
   }
   Course.init(
