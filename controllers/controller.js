@@ -32,10 +32,7 @@ class Controller {
         }
       }
 
-      req.session = {
-        userId: user.id,
-        username: user.username
-      }
+      req.session.userId = user.id;
 
       res.redirect('/')
     } catch (error) {
