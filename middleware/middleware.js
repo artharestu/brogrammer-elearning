@@ -1,6 +1,6 @@
 class Middleware {
   static auth(req, res, next) {
-    req.session.userId ? next() : res.redirect('/login');
+    req.session.username ? next() : res.redirect('/login');
   }
 
   static login(req, res, next) {
