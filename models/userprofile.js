@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       profilePicture: DataTypes.TEXT,
       dateOfBirth: DataTypes.DATE,
       UserId: DataTypes.INTEGER,
+      phoneNumber: DataTypes.STRING
     },
     {
       sequelize,
