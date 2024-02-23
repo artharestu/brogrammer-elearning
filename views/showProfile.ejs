@@ -5,20 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <%- include('_bootstrap') %>
 </head>
 
 <body>
+  <%- include('_nav') %>
 
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">
-        <%= dataProfile.fullName %>
-      </h5>
-      <img src="<%= dataProfile.profilePicture %>" alt="">
-      <p class="card-text">
-        <%= dataProfile.dateOfBirth %>
-      </p>
-      <a href="#" class="btn btn-primary w-100">Subscribe</a>
+
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="<%= dataProfile.profilePicture %>" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"> <%= dataProfile.fullName %></h5>
+          <p class="card-text"> <%= formatDate(dataProfile.dateOfBirth) %></p>
+
+          <p class="card-text"> <%= dataProfile.phoneNumber %></p>
+          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
     </div>
   </div>
 </body>
