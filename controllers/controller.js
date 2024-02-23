@@ -77,9 +77,6 @@ class Controller {
         profilePicture: `https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png`,
         dateOfBirth: `${new Date()}`,
         UserId: data.id,
-        /** user id ini pentinng dan harus ada
-         * supaya bisa mendapatkna data userprofile
-         */
       });
 
       res.redirect("/login");
@@ -201,10 +198,7 @@ class Controller {
 
   static async inputUserProf(req, res) {
     const { username } = req.session;
-    /** SESSION adalah sebuah built in function nya express
-     * jadi bisa membuat data yang di input dari user bisa tersimpan\ */
     try {
-      // res.render("inputUserProfile", { username });
 
       const user = await User.findOne({ where: { username } });
       console.log(user)
@@ -231,7 +225,7 @@ class Controller {
 
       let UserId = user.id;
       let dataProfile = await UserProfile.create({ fullName, profilePicture, dateOfBirth, phoneNumber, UserId });
-      /** render gapake (/) untuk sebelah kiri <nama file ejs> */
+
       res.render("showProfile", { dataProfile, username, formatDate });
     } catch (error) {
       console.log(error);

@@ -10,9 +10,6 @@ function formatDate(date) {
     day: "numeric",
   };
   return date.toLocaleDateString("us-US", options);
-  /** id-ID dipake untuk membuat format tanggal indonesia
-   * dan kalo us-US buat format pake bahasa indo
-   */
 }
 
 module.exports = {
