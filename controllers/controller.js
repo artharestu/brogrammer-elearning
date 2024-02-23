@@ -1,7 +1,7 @@
 const { User, Course, Category, Subscription, UserProfile } = require("../models");
 const bcrypt = require("bcrypt");
 const { Op } = require("sequelize");
-const { stringSlice } = require("../helper/formatter");
+const { stringSlice, formatDate } = require("../helper/formatter");
 const qrcode = require('qrcode');
 class Controller {
   static async home(req, res) {
@@ -70,7 +70,18 @@ class Controller {
   static async register(req, res) {
     const { username, password, email } = req.body;
     try {
-      await User.create({ username, password, email });
+      const data = await User.create({ username, password, email });
+
+      await UserProfile.create({
+        fullName: `Member Course`,
+        profilePicture: `https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png`,
+        dateOfBirth: `${new Date()}`,
+        UserId: data.id,
+        /** user id ini pentinng dan harus ada
+         * supaya bisa mendapatkna data userprofile
+         */
+      });
+
       res.redirect("/login");
     } catch (error) {
       console.log(error);
@@ -188,16 +199,30 @@ class Controller {
     }
   }
 
-  static inputUserProf(req, res) {
+  static async inputUserProf(req, res) {
     const { username } = req.session;
     /** SESSION adalah sebuah built in function nya express
      * jadi bisa membuat data yang di input dari user bisa tersimpan\ */
-    res.render("inputUserProfile", { username });
+    try {
+      // res.render("inputUserProfile", { username });
+
+      const user = await User.findOne({ where: { username } });
+      console.log(user)
+      const profile = await UserProfile.findOne({
+        where: {
+          UserId: user.id,
+        },
+      });
+      console.log(profile);
+      res.render("inputUserProfile", { profile, username });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   static async userProf(req, res) {
     const { username } = req.session;
-    const { fullName, profilePicture, dateOfBirth } = req.body;
+    const { fullName, profilePicture, dateOfBirth, phoneNumber } = req.body;
     try {
       console.log(username);
       let user = await User.findOne({
@@ -205,9 +230,9 @@ class Controller {
       });
 
       let UserId = user.id;
-      let dataProfile = await UserProfile.create({ fullName, profilePicture, dateOfBirth, UserId });
+      let dataProfile = await UserProfile.create({ fullName, profilePicture, dateOfBirth, phoneNumber, UserId });
       /** render gapake (/) untuk sebelah kiri <nama file ejs> */
-      res.render("showProfile", { dataProfile, username });
+      res.render("showProfile", { dataProfile, username, formatDate });
     } catch (error) {
       console.log(error);
       res.send(error);
